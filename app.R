@@ -5,7 +5,7 @@ library(htmltools)
 library(shiny) # optional
 
 researcher_email <- 'tuomas.eerola@durham.ac.uk'
-options <- test_options(title='Scales',
+options <- test_options(title='Scales (beta 0.1)',
                         admin_password = 'meyer',
                         researcher_email = researcher_email)
 
@@ -37,7 +37,7 @@ stimuli <- c("ex1.wav")
 items <- purrr::map(stimuli, function(stimulus) {
   audio_NAFC_page(
     label = stimulus,
-    prompt = paste0("Which one is the odd one out ", stimulus, "?"),
+    prompt = paste0("Which one is the odd one out (", stimulus, ")?"),
     choices = as.character(1:3),
 #    choices = c("Sound 1","Sound 2","Sound 3"),
     url = stimulus,
@@ -57,7 +57,7 @@ save_res <- code_block(function(state, ...) {
 make_test(opt=options,join(
   text_input_page(
     label="pe",
-    prompt="Enter your prolific id (optional)",
+    prompt="Enter your prolific ID here",
     one_line = TRUE,
     save_answer = TRUE,
   ),
