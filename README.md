@@ -1,2 +1,2 @@
 # scales
-Scales experiment prototype
+Scales experiment prototype (PsychTest)
