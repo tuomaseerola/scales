@@ -13,11 +13,11 @@ landing_page <- div(
   id = "my_div",
   h3("Scales"),
   p("This experiment is about scales.", 
-    "You will hear the sequences of sounds. Your task is",
+    "You will hear three sequences of sounds in succession. Your task is",
     "spot the odd one out. In other words, indicate which",
-    "tone clouds sounds different compared to the two others."),
+    "tone clouds sounds different compared with the two others. (BLAH BLAH....)"),
   h3("Consent"),
-  p("Click next to indicate that you participate voluntarily",
+  p("Click next to indicate that you participate voluntarily (MORE ABOUT CONSENT)",
     strong("Click Next to continue."))
 )
 
@@ -32,7 +32,7 @@ sendhome_page <- div(
 )
 
 
-stimuli <- c("piano.mp3","clarinet.mp3","violin.mp3")
+stimuli <- c("ex1.wav")
 
 items <- purrr::map(stimuli, function(stimulus) {
   audio_NAFC_page(
@@ -57,7 +57,7 @@ save_res <- code_block(function(state, ...) {
 make_test(opt=options,join(
   text_input_page(
     label="pe",
-    prompt="Enter your prolific account",
+    prompt="Enter your prolific id (optional)",
     one_line = TRUE,
     save_answer = TRUE,
   ),
